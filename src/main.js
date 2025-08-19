@@ -1,19 +1,30 @@
-const express = require('express');
-const app = express();
-const PORT = 3000;
+const readline = require('readline');
 
-/// Programa inicial, do projeto BFD.
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
 
-app.get('/', (req, res) => {
-    console.log("Requisição realizada");
-    res.send("Hello World! Estou no GET");
-})
+function pergunta(questao) {
+    return new promise((resolve) => {
+        rl.question(questao, (resposta) => {
+            resolve(resposta);
+        });
+    })
+}
 
-app.post('/', (req, res) => {
-    console.log("Requisição realizada / Entrei no POST");
-    res.send("Hello World! Estou no POST");
-})
+async function perguntarNome() {
+      const primeiroNome = await pergunta('Qual seu nome? ');
+      const ultimoNome = await pergunta('Qual seu sobrenome? ');
+      
+     console.log(`Olá, ${primeiroNome} ${ultimoNome}`);
+      
+    }
 
-app.listen(PORT, () => {
-    console.log(`Olá, mundo! App online na porta: ${PORT}`);
-})
+
+
+
+
+perguntarNome();
+
+
