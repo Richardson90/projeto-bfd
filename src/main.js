@@ -6,7 +6,7 @@ const rl = readline.createInterface({
 });
 
 function pergunta(questao) {
-    return new promise((resolve) => {
+    return new Promise((resolve) => {
         rl.question(questao, (resposta) => {
             resolve(resposta);
         });
@@ -17,12 +17,9 @@ async function perguntarNome() {
       const primeiroNome = await pergunta('Qual seu nome? ');
       const ultimoNome = await pergunta('Qual seu sobrenome? ');
       
-     console.log(`Olá, ${primeiroNome} ${ultimoNome}`);
+     console.log(`Olá, ${primeiroNome} ${ultimoNome}!`);
       
     }
-
-
-
 
 
 perguntarNome();
