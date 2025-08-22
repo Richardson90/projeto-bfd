@@ -17,7 +17,7 @@ async function perguntarIdade() {
   let pessoa = {
     nome: "Ana",
     idade: 25,
-    cidade: "Recife"
+    cidade: "Recifee"
   }
 
   for (let k in pessoa){
